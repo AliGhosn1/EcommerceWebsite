@@ -1,6 +1,5 @@
 
 import CategoryItem from "../category-item/category-item.component"
-import { useEffect } from "react"
 
 import "./categories.styles.scss"
 
