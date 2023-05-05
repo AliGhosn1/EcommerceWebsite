@@ -7,12 +7,10 @@ import './product-card.styles.scss';
 
 const ProductCard = ( {product} ) => {
     const { name, imageUrl, price } = product;
-    const { cartItems, setCartItems } = useContext(CartContext);
+    const { addItemToCart } = useContext(CartContext);
 
     const onClickHandler = () => {
-        setCartItems(cartItems => (
-            cartItems.concat(product)
-        ));
+        addItemToCart(product);
     }
 
     return(
