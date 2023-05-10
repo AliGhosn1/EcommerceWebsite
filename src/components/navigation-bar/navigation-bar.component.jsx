@@ -8,7 +8,7 @@ import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropDown from "../cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../context/shopping-cart.context";
 
-import "./navigation-bar.styles.scss"
+import { NavigationContainer, NavLink, NavLinks, LogoContainer } from "./navigation-bar.styles.jsx"
 
 const NavigationBar = () =>{
 
@@ -17,18 +17,18 @@ const NavigationBar = () =>{
 
     return(
         <Fragment>
-            <div className="navigation">
-                <Link className="logo-container" to="/"><CrwnLogo className="logo"/></Link>
-                <div className="nav-links-container">
-                    <Link className="nav-link" to="/shop">SHOP</Link>
+            <NavigationContainer>
+                <LogoContainer to="/"><CrwnLogo className="logo"/></LogoContainer>
+                <NavLinks>
+                    <NavLink to="/shop">SHOP</NavLink>
                     {currentUser ? 
-                     (<span className="nav-link" onClick={signOutUser}>SIGN OUT</span>) :
-                     (<Link className="nav-link" to="/auth">SIGN IN</Link>)
+                     (<NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>) :
+                     (<NavLink to="/auth">SIGN IN</NavLink>)
                     }
                     <CartIcon />
-                </div>
+                </NavLinks>
                 { cartState && <CartDropDown /> }
-            </div>
+            </NavigationContainer>
             <Outlet />
         </Fragment>
     )

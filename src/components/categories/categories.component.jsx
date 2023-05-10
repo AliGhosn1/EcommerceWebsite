@@ -1,7 +1,7 @@
 
 import CategoryItem from "../category-item/category-item.component"
 
-import "./categories.styles.scss"
+import { CategoriesContainer } from "./categories.styles.jsx"
 
 const Categories = () => {
     
@@ -34,11 +34,11 @@ const Categories = () => {
     ]
 
     return(
-        <div className="categories-container">
+        <CategoriesContainer>
             {categories.map((category) => (
                 <CategoryItem key={category.id} title={category.title} imageUrl={category.imageUrl}/>
             ))}      
-        </div>
+        </CategoriesContainer>
     )
 }
 

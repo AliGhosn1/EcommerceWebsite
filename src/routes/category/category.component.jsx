@@ -18,7 +18,7 @@ const Category = () => {
 
     return(
         <div className='category-container'>
-            <h1 className='category-title'>{ category.toLocaleUpperCase() }</h1>
+            <h1 className='category-title'>{ category.toUpperCase() }</h1>
             <div className="category-products-container">
                 {
                     products && products.map((product) => (

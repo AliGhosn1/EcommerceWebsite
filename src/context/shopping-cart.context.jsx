@@ -13,7 +13,6 @@ const addCartItem = (cartItems, productToAdd) => {
     return [...cartItems, {...productToAdd, quantity: 1}];
 }
 
-
 const removeCartItem = (cartItems, productToRemove) => {
 
     const existingCartItem = cartItems.find((item) => item.id === productToRemove.id)
