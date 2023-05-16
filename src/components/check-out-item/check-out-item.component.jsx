@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { CartContext } from "../../context/shopping-cart.context";
 
-import './check-out-item.styles.scss';
+import { CheckOutItemContainer, CheckOutItemImageContainer, CheckOutItemRemoveButton } from './check-out-item.styles.jsx';
 
 const CheckOutItem = ({ item }) => {
 
@@ -26,23 +26,32 @@ const CheckOutItem = ({ item }) => {
     // <span onClick={incrementHandler}> + </span>
 
     return(
-        <div className="checkout-item-container">
-            <div className="image-container">
+        <CheckOutItemContainer>
+
+            <CheckOutItemImageContainer>
                 <img src={ imageUrl } alt={ name }/>
-            </div>
+            </CheckOutItemImageContainer>
+
             <span className="name"> { name } </span>
+
             <span className="quantity">
+
                 <div className="arrow" onClick={decrementHandler}>
                     &#10094;
                 </div>
-                 <span className="value">{ quantity }</span> 
+
+                <span className="value">{ quantity }</span> 
+
                 <div className="arrow" onClick={incrementHandler}>
                     &#10095;
                 </div>
-                </span>
+
+            </span>
+
             <span className="price"> { price } </span>
-            <div className='remove-button'  onClick={clearHandler}>&#10005;</div>
-        </div>
+            
+            <CheckOutItemRemoveButton onClick={clearHandler}>&#10005;</CheckOutItemRemoveButton>
+        </CheckOutItemContainer>
     )
 }
 

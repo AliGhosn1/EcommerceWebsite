@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { BaseButton } from '../button/button.styles'
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
@@ -25,15 +26,14 @@ export const CartItems = styled.div`
   overflow: scroll;
 `
 
-//   .empty-message {
-//     font-size: 18px;
-//     margin: 50px auto;
-//   }
+export const EmptyMessage = styled.span`
+  font-size: 50px;
+  margin: 50px auto;
+`
 
-
-//   button {
-//     margin-top: auto;
-//   }
+export const CartButton = styled(BaseButton)`
+  margin-top: auto;
+`
 
 
 
